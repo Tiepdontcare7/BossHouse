@@ -6,6 +6,10 @@ import NotFound from "./pages/errors/404";
 import Dashboard from "./pages/admin/dashboard/Dashboard";
 import ListProduct from "./pages/admin/products/ListProduct";
 import AdminLayout from "./layout/AdminLayout";
+import ContactPage from "./pages/client/Contact";
+import Blog from "./pages/client/Blog";
+import  Cart  from "./pages/client/Cart";
+import { BlogDeatl } from "./pages/client/BlogDeatl";
 
 function App() {
   return (
@@ -15,6 +19,10 @@ function App() {
           <Route path="/" element={<BaseLayout />}>
             <Route path="" element={<HomePage />} />
             <Route path="detail/:id" element={<DetailPage />} />
+            <Route path="contact" element={<ContactPage/>}/>
+            <Route path="blog" element={<Blog/>}/>
+            <Route path="blogDetail" element={<BlogDeatl/>}/>
+            <Route path="cart" element={<Cart/>}/>
           </Route>
 
           <Route path="/admin/" element={<AdminLayout />}>
