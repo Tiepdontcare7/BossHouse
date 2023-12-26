@@ -31,7 +31,7 @@ const Cart = () => {
 
 
         <div className="">
-            <div className="">
+  
 
 
 
@@ -50,7 +50,7 @@ const Cart = () => {
                                         <div className="mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
                                             <div className="flex items-center border-gray-100">
                                                 <span className="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50" onClick={handleDecrement} > - </span>
-                                                <input className="h-8 w-8 border bg-white text-center text-xs outline-none" value={quantity} type="number" min="1" />
+                                                <input className="h-8 w-8 border bg-white text-center text-xs outline-none pl-[10px]" value={quantity} type="number" min="1" />
                                                 <span className="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50" onClick={handleIncrement}> + </span>
                                             </div>
                                             <div className="flex items-center space-x-4">
@@ -72,7 +72,7 @@ const Cart = () => {
                                         <div className="mt-4 flex justify-between im sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
                                             <div className="flex items-center border-gray-100">
                                                 <span className="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50 " onClick={handleDecrement}> - </span>
-                                                <input className="h-8 w-8 border bg-white text-center text-xs outline-none" value={quantity} type="number" min="1" />
+                                                <input className="h-8 w-8 border bg-white text-center text-xs outline-none pl-[10px]" value={quantity} type="number" min="1" />
                                                 <span className="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50" onClick={handleIncrement}> + </span>
                                             </div>
                                             <div className="flex items-center space-x-4">
@@ -94,6 +94,13 @@ const Cart = () => {
                                     <p className="text-gray-700">Shipping</p>
                                     <p className="text-gray-700">$4.99</p>
                                 </div>
+                                <div className="coupon pt-[10px]">
+                                    <h3 className="widget-title mt-[10px] flex"><FaTag />
+                                        Phiếu ưu đãi</h3>
+                                    <input type="text" name="coupon_code" className="input-text" id="coupon_code" value="" placeholder="Mã ưu đãi" />
+                                    <input type="submit" className="is-form expand" name="apply_coupon" value="Áp dụng" />
+
+                                </div>
                                 <hr className="my-4" />
                                 <div className="flex justify-between">
                                     <p className="text-lg font-bold">Total</p>
@@ -102,13 +109,7 @@ const Cart = () => {
                                         <p className="text-sm text-gray-700">including VAT</p>
                                     </div>
                                 </div>
-                                <div className="coupon pt-[10px]">
-                                    <h3 className="widget-title mt-[10px] flex"><FaTag />
-                                        Phiếu ưu đãi</h3>
-                                    <input type="text" name="coupon_code" className="input-text" id="coupon_code" value="" placeholder="Mã ưu đãi" />
-                                    <input type="submit" className="is-form expand" name="apply_coupon" value="Áp dụng" />
-
-                                </div>
+                                
                                 <button className="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600">Check out</button>
                             </div>
                         </div>
@@ -219,7 +220,7 @@ const Cart = () => {
 
                 <div />
             </div>
-        </div>
+    
 
     );
 
