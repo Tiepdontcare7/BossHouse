@@ -14,12 +14,9 @@ export const addOrder = async (req, res) => {
     const {
       userId,
       products,
-      dateTime,
-      name,
-      phone,
+      fullName,
+      phoneNumber,
       address,
-      message,
-      paymentMethod,
     } = req.body;
 
     // Kiểm tra đồng bộ để tránh tình trạng race condition
@@ -29,17 +26,17 @@ export const addOrder = async (req, res) => {
     if (!userOrder) {
       const newOrder = await order.create({
         userId,
-        name,
+        fullName,
         address,
-        phone,
-        paymentMethod,
+        phoneNumber,
         products: products.map((p) => ({
           productId: p.productId,
           name: p.name,
           price: p.price,
           quantity: p.quantity,
-          message,
-          dateTime,
+          message: p.message,
+          dateTime: p.dateTime,
+          paymentMethod: p.paymentMethod,
         })),
       });
 
@@ -59,7 +56,8 @@ export const addOrder = async (req, res) => {
         name: p.name,
         price: p.price,
         quantity: p.quantity,
-        dateTime,
+        dateTime: p.dateTime,
+        paymentMethod: p.paymentMethod
       });
     });
 

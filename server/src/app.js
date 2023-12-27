@@ -11,6 +11,8 @@ import {
   orderRouter,
 } from "./routers/index.js";
 import dotenv from "dotenv";
+import paypal from "paypal-rest-sdk";
+
 dotenv.config();
 
 const port = process.env.PORT || "3001";
@@ -26,7 +28,6 @@ app.use("/mail", mailRouter);
 app.use("/card", CartRouter);
 app.use("/order", orderRouter);
 
-import paypal from "paypal-rest-sdk";
 paypal.configure({
   mode: "sandbox", //sandbox or live
   client_id: process.env.CLIENT_ID,
@@ -136,5 +137,5 @@ app.get("/cancel", (req, res) => {
 
 app.listen(7000, async () => {
   await connect();
-  console.log(`Example app listening on port ${port}`);
+  console.log(`Example app listening on port 7000`);
 });

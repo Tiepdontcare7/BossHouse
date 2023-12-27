@@ -14,7 +14,7 @@ const storage = new CloudinaryStorage({
     cloudinary,
     allowedFormats: ['jpg', 'png'],
     params: {
-        folder: 'ng_asm'
+        folder: 'DuAnTotNghiep'
     }
 });
 
