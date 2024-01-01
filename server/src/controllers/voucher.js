@@ -139,24 +139,24 @@ const deleteVoucher = async (req, res) => {
 
 const applyVoucher = async (req, res) => {
   try {
-    const { voucherCode, totalPrice, orderId } = req.body;
+    const { voucherCode, totalPrice } = req.body;
 
     // Kiểm tra xem voucher có tồn tại không
     const findVoucher = await voucher.findOne({
       code: voucherCode,
-      // applied: false,
+      applied: false,
     });
 
-    // if (!findVoucher) {
-    //   return res
-    //     .status(404)
-    //     .json({ error: "Voucher không tồn tại hoặc đã được áp dụng!" });
-    // }
+    if (!findVoucher) {
+      return res
+        .status(404)
+        .json({ error: "Voucher không tồn tại hoặc đã được áp dụng!" });
+    }
 
     // Kiểm tra xem voucher đã hết hạn chưa
     const currentDate = new Date();
-    console.log(currentDate.getDay());
-    if (currentDate > findVoucher.expirationDate) {
+    const expirationDate = new Date(findVoucher.expirationDate);
+    if (currentDate > expirationDate) {
       return res
         .status(400)
         .json({ error: "Voucher đã hết hạn sử dụng!" });

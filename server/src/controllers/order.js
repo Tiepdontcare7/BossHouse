@@ -83,47 +83,51 @@ export const addOrder = async (req, res) => {
   }
 };
 
-export const updateCartItem = async (req, res) => {
+export const updateOrder = async (req, res) => {
   try {
-    const { userId, productId, quantity, name } = req.body;
-    const Cart = await cart.findOne({ userId });
+    const { userId, orderProductId, status } = req.body;
 
-    if (!Cart) {
-      return res.status(404).json({ error: "Cart not found" });
+    const userOrder = await order.findOne({ userId });
+
+    if (!userOrder) {
+      return res
+        .status(404)
+        .json({ error: "Đơn hàng của người dùng không khả dụng!" });
     }
 
-    const productIndex = Cart.products.findIndex((item) => item.name == name);
+    const productIndex = userOrder.products.findIndex(
+      (p) => p._id == orderProductId
+    );
+    userOrder.products[productIndex].status = status;
 
-    if (productIndex === -1) {
-      return res.status(404).json({ error: "Product not found in cart" });
-    }
+    const data = await userOrder.save();
 
-    Cart.products[productIndex].quantity = quantity;
-
-    const updatedCart = await Cart.save();
-
-    res.json(updatedCart);
+    return res.status(200).json({ updated: true, data });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 };
 
-export const removeCartItem = async (req, res) => {
+export const deleteOrder = async (req, res) => {
   try {
-    const { userId, productId, name } = req.body;
+    const { userId, orderProductId } = req.body;
 
-    const userCart = await cart.findOne({ userId });
+    const userOrder = await order.findOne({ userId });
 
-    if (!userCart) {
-      return res.status(404).json({ error: "Cart not found" });
+    if (!userOrder) {
+      return res
+        .status(404)
+        .json({ error: "Đơn hàng của người dùng không khả dụng!" });
     }
 
-    userCart.products = userCart.products.filter((item) => item.name != name);
+    userOrder.products = userOrder.products.filter(
+      (p) => p._id != orderProductId
+    );
 
-    const updatedCart = await userCart.save();
+    const data = await userOrder.save();
 
-    return res.status(200).json({ deleted: true, updatedCart });
+    return res.status(200).json({ deleted: true, data });
   } catch (error) {
-    return res.status(500).json({ error: error.message });
+    res.status(500).json({ error: error.message });
   }
 };
