@@ -7,6 +7,7 @@ const schema = Joi.object({
   description: Joi.string().min(3),
   image: Joi.string(),
   quantity: Joi.number(),
+  isActive: Joi.boolean(),
   categoryId: Joi.string(),
 });
 

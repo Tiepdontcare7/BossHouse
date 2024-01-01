@@ -9,6 +9,7 @@ import {
   uploadRouter,
   mailRouter,
   orderRouter,
+  voucherRouter
 } from "./routers/index.js";
 import dotenv from "dotenv";
 import paypal from "paypal-rest-sdk";
@@ -27,6 +28,7 @@ app.use("/image", uploadRouter);
 app.use("/mail", mailRouter);
 app.use("/card", CartRouter);
 app.use("/order", orderRouter);
+app.use("/voucher", voucherRouter);
 
 paypal.configure({
   mode: "sandbox", //sandbox or live

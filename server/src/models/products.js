@@ -10,6 +10,7 @@ const product = mongoose.model(
       description: { type: String, required: true },
       image: { type: String, required: true },
       quantity: { type: Number, required: true },
+      isActive: { type: Boolean, required: true, default: true },
       categoryId: {
         type: ObjectId,
         required: true,

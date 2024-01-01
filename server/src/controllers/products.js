@@ -1,9 +1,8 @@
 import { product } from "../models/index.js";
 import { schemaProduct } from "../validate/index.js";
 import category from "../models/category.js";
-import cloudinary from "../config/cloudinary.js";
 
-const getAllproducts = async (req, res) => {
+const getAllProduct = async (req, res) => {
   try {
     const {
       _limit = 10,
@@ -25,7 +24,7 @@ const getAllproducts = async (req, res) => {
     // const data = await product.find({}).populate("categoryId");
 
     //* !data.docs
-    if (!data || data.length === 0) {
+    if (!data || data.docs.length === 0) {
       return res.status(404).json({
         message: "Không tìm thấy sản phẩm",
       });
@@ -97,6 +96,7 @@ const updateProduct = async (req, res) => {
   try {
     const body = req.body;
     const { error } = schemaProduct.validate(body);
+
     if (error) {
       return res.status(400).json({
         message: error.details[0].message,
@@ -105,7 +105,7 @@ const updateProduct = async (req, res) => {
       const data = await product
         .findByIdAndUpdate(req.params.id, body, { new: true })
         .populate("categoryId");
-      console.log(data);
+        console.log(data);
 
       if (!data) {
         return res.status(404).json({
@@ -146,7 +146,7 @@ const deleteProduct = async (req, res) => {
 };
 
 export default {
-  getAllproducts,
+  getAllProduct,
   getOneProduct,
   addProduct,
   updateProduct,

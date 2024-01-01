@@ -14,7 +14,7 @@ const signup = async (req, res) => {
 
     const findUser = await user.findOne({ email: req.body.email });
     if (findUser) {
-      return res.status(400).json({ messages: "Account đã tồn tại!" });
+      return res.status(400).json({ messages: "Tài khoản đã tồn tại!" });
     }
 
     const pwHash = await bcryptjs.hash(String(req.body.password), 10);
@@ -26,12 +26,12 @@ const signup = async (req, res) => {
 
     if (!data) {
       return res.status(404).json({
-        messages: "Create account failed!",
+        messages: "Đăng ký thất bại!",
       });
     }
 
     return res.status(200).json({
-      messages: "Signup successfully",
+      messages: "Đăng ký thành công!",
       data: {
         ...req.body,
         password: undefined,
@@ -57,7 +57,7 @@ const signin = async (req, res) => {
     const findUser = await user.findOne({ email: req.body.email });
     if (!findUser) {
       return res.status(404).json({
-        messages: "Account not found",
+        messages: "Tài khoản không tồn tại!",
       });
     }
 
@@ -67,18 +67,18 @@ const signin = async (req, res) => {
     );
     if (!checkPassword) {
       return res.status(404).json({
-        messages: "Password not valid",
+        messages: "Mật khẩu không chính xác!",
       });
     }
 
     const token = await jwt.sign({ findUser }, process.env.TOKEN, {
-      expiresIn: "1d",
+      expiresIn: "7d",
     });
 
     findUser.password = undefined;
 
     return res.status(200).json({
-      messages: "Signing in successfully",
+      messages: "Đăng nhập thành công!",
       findUser,
       token,
     });
@@ -95,7 +95,7 @@ const getAll = async (req, res) => {
 
     if (!data || data.length === 0) {
       return res.status(404).json({
-        message: "Không tìm thấy user!",
+        message: "Không tìm thấy danh sách user!",
       });
     }
 

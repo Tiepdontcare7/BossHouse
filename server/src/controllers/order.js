@@ -2,7 +2,24 @@ import order from "../models/order.js";
 
 export const getAllOrder = async (req, res) => {
   try {
-    const orders = await order.find({});
+    const {
+      _limit = 10,
+      _page = 1,
+      _order = "asc",
+      _sort = "createdAt",
+    } = req.query;
+
+    const options = {
+      page: _page,
+      limit: _limit,
+      order: _order,
+      sort: {
+        [_sort]: _order === "asc" ? 1 : -1,
+      },
+    };
+
+    // const orders = await order.find({});
+    const orders = await order.paginate({}, options);
     return res.status(200).json(orders);
   } catch (error) {
     return res.status(500).json({ error: error.message });
@@ -11,13 +28,7 @@ export const getAllOrder = async (req, res) => {
 
 export const addOrder = async (req, res) => {
   try {
-    const {
-      userId,
-      products,
-      fullName,
-      phoneNumber,
-      address,
-    } = req.body;
+    const { userId, products, fullName, phoneNumber, address } = req.body;
 
     // Kiểm tra đồng bộ để tránh tình trạng race condition
     const userOrder = await order.findOne({ userId });
@@ -57,7 +68,7 @@ export const addOrder = async (req, res) => {
         price: p.price,
         quantity: p.quantity,
         dateTime: p.dateTime,
-        paymentMethod: p.paymentMethod
+        paymentMethod: p.paymentMethod,
       });
     });
 
