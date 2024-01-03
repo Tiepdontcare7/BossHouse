@@ -5,6 +5,7 @@ import CartRouter from "./cart.js";
 import uploadRouter from "./upload.js";
 import mailRouter from "./mail.js";
 import orderRouter from "./order.js";
+import blogRouter from "./blogs.js";
 
 export {
   ProductRouter,
@@ -14,4 +15,5 @@ export {
   uploadRouter,
   mailRouter,
   orderRouter,
+  blogRouter
 };

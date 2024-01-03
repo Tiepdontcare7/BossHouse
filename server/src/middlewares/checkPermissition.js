@@ -13,7 +13,7 @@ export const checkPermission = async (req, res, next) => {
     if (decoded.findUser && decoded.findUser.role === 1) {
       next();
     } else {
-      throw new Error("Ban không phải admin, bạn không có quyền làm việc này!");
+      throw new Error("Bạn không phải admin, bạn không có quyền làm việc này!");
     }
   } catch (error) {
     return res.status(500).json({
