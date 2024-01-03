@@ -1,15 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* html,
-body,
-div {
-    cursor: url('https://cdn.custom-cursor.com/db/18434/32/detailed-color-bee-cursor.png'), auto !important;
-    font-family: 'Roboto', sans-serif;
-}
-a:hover,
-button:hover,
-input:hover {
-    cursor: url('https://cdn.custom-cursor.com/db/18433/32/detailed-color-bee-pointer.png'), auto !important;
-} */

@@ -1,11 +1,11 @@
 const Gallery = () => {
     return (
         <section className="section-gallery bg-[url('/images/bg-img.jpg')]">
-            <div className="bg-[#00000040] h-auto py-12">
+            <div className="bg-[#5539390e] h-auto py-12">
                 <div className="row">
                     <div className="title mx-auto text-center">
-                        <h3 className="font-bold text-4xl mb-4 text-[#f2b10b]">HÌNH ẢNH BOSSHOUSE</h3>
-                        <img className="mx-auto text-center" src="/images/ngoi-sao.jpg" alt="" />
+                        <h3 className="font-bold text-4xl mb-4 text-[#ffffff]">HÌNH ẢNH BOSSHOUSE</h3>
+                        <img className="mx-auto text-center" src="/images/ngoi-sao.png" alt="" />
                     </div>
                 </div>
                 <div className="row mt-[20px] mb-[20px]">

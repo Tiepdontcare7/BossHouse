@@ -2,9 +2,9 @@ const Introduce = () => {
     return (
         <section className="bg-white py-16">
             <div className="text-center">
-                <h2 className="font-bold text-3xl mb-4 text-[#f2b10b]">GIỚI THIỆU</h2>
+                <h2 className="font-bold text-3xl mb-4 text-[#000000]">GIỚI THIỆU</h2>
                 <div>
-                    <img className="block mx-auto" src="/images/ngoi-sao.jpg" alt="" />
+                    <img className="block mx-auto" src="/images/ngoi-sao.png" alt="" />
                 </div>
             </div>
             <div className="grid md:grid-cols-2  max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 gap-5 lg:py-16 lg:grid-cols-12">

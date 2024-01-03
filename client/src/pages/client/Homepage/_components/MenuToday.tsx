@@ -9,13 +9,13 @@ const MenuToday = () => {
     return (
         <section className="py-16 bg-[#f5f1dd]">
             <div className="text-center">
-                <h2 className="font-bold text-3xl mb-4 text-[#f2b10b]">BOSS HOUSE CÓ NHỮNG GÌ</h2>
+                <h2 className="font-bold text-3xl mb-4 text-[#000]">BOSS HOUSE CÓ NHỮNG GÌ</h2>
                 <h4 className="font-bold text-base mb-4"> DỊCH VỤ VÀ THỨC ĂN  </h4>
                 <div>
-                    <img className="block mx-auto" src="/images/ngoi-sao.jpg" alt="" />
+                    <img className="block mx-auto" src="/images/ngoi-sao.png" alt="" />
                 </div>
             </div>
-            <div className="xl:mx-[120px] mx-[15px] mt-16">
+            <div className="xl:mx-[60px] mx-[15px] mt-16">
                 <Swiper
                     slidesPerView={4}
                     spaceBetween={15}

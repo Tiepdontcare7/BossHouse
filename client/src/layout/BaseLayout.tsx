@@ -1,12 +1,14 @@
-import { Outlet } from 'react-router-dom';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import { Outlet } from "react-router-dom";
+import Header from "../components/header/Header";
+import Footer from "../components/footer/Footer";
 
 const BaseLayout = () => {
     return (
         <>
             <Header />
-            <Outlet />
+           <div className="pt-[100px]">
+           <Outlet />
+           </div>
             <Footer />
         </>
     );
