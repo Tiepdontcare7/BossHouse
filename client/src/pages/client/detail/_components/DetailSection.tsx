@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { IoIosArrowDown } from "react-icons/io";
 
 const DetailSection = () => {
     const [quantity, setQuantity] = useState(1);
@@ -41,12 +42,12 @@ const DetailSection = () => {
                         </div>
                     </div>
                     <div className="info">
-                        <h1 className="name font-medium text-[25px] border-b py-[14px] leading-7 capitalize ">váy phối màu classic</h1>
+                        <h1 className="name font-medium text-[25px] border-b py-[14px] mb-4 leading-7 capitalize ">váy phối màu classic</h1>
                         <div className="product-page-accordian">
                             <div className="accordion text-lg ">
                                 <div id="accordion-reviews" className="accordion-item">
                                     <a id="accordion-reviews-label" className="accordion-title plain" aria-expanded="false" aria-controls="accordion-reviews-content" href="#accordion-item-reviews">
-                                        <button className="toggle" aria-label="Toggle"><i className="icon-angle-down"></i></button>
+                                        <button className="toggle" aria-label="Toggle"><IoIosArrowDown /></button>
                                         Đánh giá (0)
                                     </a>
 
@@ -109,14 +110,10 @@ const DetailSection = () => {
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
-
                     </div>
-
                 </div>
-
             </div >
         </section>
     )
