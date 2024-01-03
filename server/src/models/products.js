@@ -8,6 +8,8 @@ const product = mongoose.model(
       name: { type: String, required: true },
       price: { type: Number, required: true },
       desc: { type: String, required: true },
+      size:{type:Number, require:true},
+      ecative:{type:Boolean},
       img: { type: String, required: true },
       quantity: { type: Number, required: true },
       categoryId: {

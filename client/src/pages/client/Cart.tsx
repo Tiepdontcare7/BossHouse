@@ -3,8 +3,8 @@ import { useState } from "react";
 import { FaTag } from "react-icons/fa";
 const Cart = () => {
     const [quantity, setQuantity] = useState(1);
-    // const { data: isLoading, isError } = useQuery({
-    //     queryKey: ["CARTS"],
+    // // const { data: isLoading, isError } = useQuery({
+    // //     queryKey: ["CARTS"],
 
 
 
@@ -22,206 +22,93 @@ const Cart = () => {
     // if (isError) return <div>Error...</div>;
     return (
 
+        <div className="h-auto  pt-20">
+            <h1 className="mb-10 text-center text-2xl font-bold text-[#000]">Giỏ Hàng</h1>
+            <div className="mx-auto max-w-7xl justify-center px-6 md:flex md:space-x-6 xl:px-0 ">
+                <div className="">
+                    <nav className="text-xs font-semibold uppercase text-gray-400">
+                        <ul className=" flex border-b pb-2">
+                            <li className=""> <input type="checkbox" className="xl:h-4 xl:w-4 " value="id-1" /></li>
+                            <li className="text-left font-bold text-[#000] xl:ml-3 ml-2  xl:text-base xl:w-[300px]  md:w-[100px] w-[500px]">
+                                Sản Phẩm
+                            </li>
+                            <li className="text-left font-bold text-[#000] xl:text-base xl:w-[150px] xl:block hidden">
+                                Đơn Giá
+                            </li>
+                            <li className="xl:text-left xl:ml-0 font-bold text-[#000] xl:text-base xl:w-[150px] lg:w-[100px] lg:ml-[280px] md:w-[100px] md:ml-[280px] w-[300px] ml-[130px] ">
+                                Số Lượng
+                            </li>
+                            <li className="text-left font-bold text-[#000] xl:text-base xl:w-[150px] xl:block hidden">
+                                Số Tiền
+                            </li>
+                            <li className="text-left font-bold text-[#000] xl:text-base xl:w-[100px] xl:block hidden ">
+                                Action
+                            </li>
+                        </ul>
+                    </nav>
 
-        // <div className=" ">
-        // <div className="mt-0 mb-[100px] w-full">
-
-        // </div>
-
-
-
-        <div className="">
-  
-
-
-
-                <body>
-                    <div className="h-screen bg-gray-100 pt-20">
-                        <h1 className="mb-10 text-center text-2xl font-bold">Cart Items</h1>
-                        <div className="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
-                            <div className="rounded-lg md:w-2/3">
-                                <div className="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start">
-                                    <img src="https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="product-image" className="w-full rounded-lg sm:w-40" />
-                                    <div className="sm:ml-4 sm:flex sm:w-full sm:justify-between">
-                                        <div className="mt-5 sm:mt-0">
-                                            <h2 className="text-lg font-bold text-gray-900">Nike Air Max 2019</h2>
-                                            <p className="mt-1 text-xs text-gray-700">36EU - 4Uđ</p>
-                                        </div>
-                                        <div className="mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
-                                            <div className="flex items-center border-gray-100">
-                                                <span className="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50" onClick={handleDecrement} > - </span>
-                                                <input className="h-8 w-8 border bg-white text-center text-xs outline-none pl-[10px]" value={quantity} type="number" min="1" />
-                                                <span className="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50" onClick={handleIncrement}> + </span>
-                                            </div>
-                                            <div className="flex items-center space-x-4">
-                                                <p className="text-sm">259.000 đ</p>
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="h-5 w-5 cursor-pointer duration-150 hover:text-red-500">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                                </svg>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start">
-                                    <img src="https://images.unsplash.com/photo-1587563871167-1ee9c731aefb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1131&q=80" alt="product-image" className="w-full rounded-lg sm:w-40" />
-                                    <div className="sm:ml-4 sm:flex sm:w-full sm:justify-between">
-                                        <div className="mt-5 sm:mt-0">
-                                            <h2 className="text-lg font-bold text-gray-900">Nike Air Max 2019</h2>
-                                            <p className="mt-1 text-xs text-gray-700">36EU - 4đ</p>
-                                        </div>
-                                        <div className="mt-4 flex justify-between im sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
-                                            <div className="flex items-center border-gray-100">
-                                                <span className="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50 " onClick={handleDecrement}> - </span>
-                                                <input className="h-8 w-8 border bg-white text-center text-xs outline-none pl-[10px]" value={quantity} type="number" min="1" />
-                                                <span className="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50" onClick={handleIncrement}> + </span>
-                                            </div>
-                                            <div className="flex items-center space-x-4">
-                                                <p className="text-sm">259.000 VND</p>
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="h-5 w-5 cursor-pointer duration-150 hover:text-red-500">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                                </svg>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                    <div className="divide-y divide-gray-100 text-sm">
+                        <div className=" flex  py-2 ">
+                            <div className="py-4 ">
+                                <input type="checkbox" className="xl:h-4 xl:w-4" value="id-1" />
                             </div>
-                            <div className="mt-6 h-full rounded-lg border bg-white p-6 shadow-md md:mt-0 md:w-1/3">
-                                <div className="mb-2 flex justify-between">
-                                    <p className="text-gray-700">Subtotal</p>
-                                    <p className="text-gray-700">$129.99</p>
-                                </div>
-                                <div className="flex justify-between">
-                                    <p className="text-gray-700">Shipping</p>
-                                    <p className="text-gray-700">$4.99</p>
-                                </div>
-                                <div className="coupon pt-[10px]">
-                                    <h3 className="widget-title mt-[10px] flex"><FaTag />
-                                        Phiếu ưu đãi</h3>
-                                    <input type="text" name="coupon_code" className="input-text" id="coupon_code" value="" placeholder="Mã ưu đãi" />
-                                    <input type="submit" className="is-form expand" name="apply_coupon" value="Áp dụng" />
-
-                                </div>
-                                <hr className="my-4" />
-                                <div className="flex justify-between">
-                                    <p className="text-lg font-bold">Total</p>
-                                    <div className="">
-                                        <p className="mb-1 text-lg font-bold">$134.98 USD</p>
-                                        <p className="text-sm text-gray-700">including VAT</p>
-                                    </div>
-                                </div>
-                                
-                                <button className="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600">Check out</button>
+                            <div className="font-medium text-gray-800 flex xl:ml-3 ml-2 xl:w-[300px]  w-full">
+                                <img src="/images/img_v2.png" alt="" className="xl:w-[70px] xl:h-[70px] w-[60px] h-[60px]" />
+                                <span className="pl-2 xl:mt-6 w-[230px] xl:h-0 h-[50px] mt-3 ">
+                                    Samsung Galaxy Note 4
+                                </span>
                             </div>
-                        </div>
-                    </div>
-                </body>
-                {/* <table classNameName="w-full border-collapse border ml-[50px]" >
-                    <thead classNameName="border-b-2 mb-4  ">
-                        <tr classNameName=''>
-                            <th classNameName='w-[350px] flex text-sm'>SẢN PHẨM</th>
-                            <th classNameName='w-[100px] text-sm'>GIÁ</th>
-                            <th classNameName='w-[100px] text-sm'>SỐ LƯỢNG </th>
-                            <th classNameName='w-[100px] text-sm'>TẠM TÍNH</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        <tr classNameName=' my-[10px]  text-center border-b py-2' >
-                            <div classNameName="flex mx-[10px]">
-                                <div classNameName="my-[28px] mr-[10px] cursor-pointer border-2 w-8 h-8 rounded-[50%] pt-[2px]">
-                                    <i classNameName="fa-solid fa-trash text-[#0000006d] " ></i>
-                                </div>
-                                <td classNameName="py-[15px]">
-                                    <img src="" alt="" classNameName="w-[90px] h-[90px]" />
-                                </td>
-                                <td classNameName="my-[30px] ml-[20px] text-[#ad8444] text-base"></td>
+                            <div className="xl:w-[150px] xl:py-5 py-8 w-[50px] ml-[-160px] xl:ml-0 lg:ml-[-280px] md:ml-[-280px]">
+                                <div className="text-green-500 font-medium xl:w-[100px] w-[100px] ">150.000 vnd</div>
                             </div>
-                            <td classNameName=" font-semibold"></td>
-                            <td classNameName="">
-                                <div classNameName="flex mx-[5px]">
-                                    <button classNameName="w-[50px] border h-[30px]  text-xl" onClick={handleIncrement}>
-                                        +
-                                    </button>
-                                    <input type="text" className="border w-[50px] h-[30px]" value={quantity} readOnly />
-                                    <button className="w-[50px] border h-[30px]  text-xl" onClick={handleDecrement}>
-                                        -
-                                    </button>
-                                </div>
-                            </td>
-                            <td className=" font-semibold"></td>
-                        </tr>
-
-                    </tbody>
-                    <div className="mt-[50px]">
-
-                    </div>
-                </table> */}
-
-
-                {/* <div className="w-1/2 pl-4 lg:ml-[850px] lg:mt-[-190px] lg:w-[600px]">
-                    <div className="cart-collaterals col pb-0 ">
-                        <div className="cart_totals border-red-500 ">
-
-                            <table cellSpacing="0">
-                                <thead>
-                                    <tr>
-                                        <th className="product-name uppercase flex h-[35px] pt-[3px] w-[600px] pr-[450px]" colSpan={2} style={{
-                                            borderRight: "3px solid black", // Đường viền phía bên phải là màu đen
-                                            borderTop: "3px solid black",  // Đường viền phía trên là màu đen
-                                            borderLeft: "3px solid black",  // Đường viền phía dưới là màu đen
-                                            borderBottom: "3px solid gray-200",
-                                            borderWidth: "3px ",
-                                        }}>Cộng giỏ hàng</th>
-                                    </tr>
-                                </thead>
-                            </table>
-
-                            
-
-                            <table cellSpacing="0" className=" mt-[20px]">
-
-                                <tbody className=" ">
-                                    <tr className="cart-subtotal ">
-                                    <th className="text-[15px]  pr-[540px] font-normal "  >Tạm tính</th>
-                                    <td className="pr-[130px]" data-title="Tạm tính"><span className="  "><bdi>150,000&nbsp;<span className="">₫</span></bdi></span></td>
-                                </tr>
-                                      <hr className="w-[600px]"></hr>
-                                    <tr className=" mt-[10px] ">
-                                        <th className=" pr-[560px] font-normal">Tổng</th>
-                                        <td data-title="Tổng"><strong><span className="woocommerce-Price-amount amount"><bdi>150,000&nbsp;<span className="woocommerce-Price-currencySymbol">₫</span></bdi></span></strong> </td>
-                                    </tr>
-
-
-                                </tbody></table>
-
-                            <div className="wc-proceed-to-checkout">
-
-                                <a href="" className="checkout-button button alt wc-forward">
-                                    Tiến hành thanh toán</a>
+                            <div className="flex item border-gray-100 w-[150px] xl:py-4 xl:ml-0  ml-28 lg:ml-60  md:ml-60 ">
+                                <span className="xl:h-8 xl:w-8 w-5 h-5 cursor-pointer  rounded-l bg-[#f9f9f9] xl:py-1 xl:px-3 text-center duration-100 hover:bg-[#00000021] hover:text-[#000] border" onClick={handleDecrement}> - </span>
+                                <input className="xl:h-8 xl:w-8 w-5 h-5  bg-white  text-xs outline-none text-center border" value={quantity} min="1" />
+                                <span className="xl:h-8 xl:w-8 w-5 h-5 cursor-pointer rounded-r bg-[#f9f9f9] xl:py-1 xl:px-3 text-center duration-100 hover:bg-[#0000001f] hover:text-[#000] border" onClick={handleIncrement}> + </span>
                             </div>
-
-
-                        </div>
-                        <form className="checkout_coupon mb-0" method="post" />
-                        <div className="coupon">
-                            <h3 className="widget-title"><i className="icon-tag"></i> Phiếu ưu đãi</h3>
-                            <input type="text" name="coupon_code" className="input-text" id="coupon_code" value="" placeholder="Mã ưu đãi" />
-                            <input type="submit" className="is-form expand" name="apply_coupon" value="Áp dụng" />
-
+                            <div className="w-[150px] py-4 ">
+                                <div className=" font-medium text-green-500 xl:block hidden">150.000 vnd</div>
+                            </div>
+                            <button className=" xl:ml-[-20px]  ml-[-200px] md:py-3 lg:py-3 py-4  flex justify-center w-[100px] ">
+                                <svg className="xl:h-8 xl:w-8 w-7 h-7 rounded-full p-1 hover:bg-gray-100 hover:text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                                </svg>
+                            </button>
                         </div>
 
-                        <div className="cart-sidebar-content relative"></div>
+
+                 
+                    </div>
+                </div>
+                <div className="mt-6 h-full rounded-lg border bg-white p-6 shadow-md md:mt-0 md:w-1/3">
+                    <div className="mb-2 flex justify-between">
+                        <p className="text-[#000] font-medium">Giá Tiền</p>
+                        <p className="text-[#000] ">$129.99</p>
+                    </div>
+                    <div className="flex justify-between">
+                        <p className="text-[#000] font-medium">Số Lượng</p>
+                        <p className="text-[#000]">4</p>
+                    </div>
+                    <div className="coupon pt-[10px]">
+                        <h3 className="widget-title mt-[10px] flex"><FaTag />
+                            <span className="ml-2 text-[#000] font-medium"> Phiếu ưu đãi</span></h3>
+                        <input type="text" name="coupon_code" className="h-8 border mt-2 pl-1 w-full text-[#000] font-medium" id="coupon_code" placeholder="Mã ưu đãi" />
+                        <input type="submit" name="coupon_code" className="h-8 border mt-2 pl-1 w-full hover:text-[#000] hover:bg-[#00000018] hover:font-medium" id="coupon_code" value="Áp dụng" />
+
+                    </div>
+                    <hr className="my-4" />
+                    <div className="flex justify-between">
+                        <p className="text-lg font-bold text-[#000]">Thành Tiền</p>
+                        <div className="">
+                            <p className="mb-1 text-lg font-bold text-[#000]">$134.98 USD</p>
+                            <p className="text-sm text-[#000]">( Bao gồm VAT )</p>
+                        </div>
                     </div>
 
-                </div> */}
-
-
-
-
-                <div />
+                    <button className="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600">Thanh Toán</button>
+                </div>
             </div>
-    
-
+        </div>
     );
 
 }
