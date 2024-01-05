@@ -1,5 +1,5 @@
 import bcryptjs from "bcryptjs";
-import { userSignin, userSignup } from "../validate/index.js";
+import { userSchema, userSignin, userSignup } from "../validate/index.js";
 import { user } from "../models/index.js";
 import jwt from "jsonwebtoken";
 
@@ -107,4 +107,42 @@ const getAll = async (req, res) => {
   }
 };
 
-export default { signup, signin, getAll };
+const updateUser = async (req, res) => {
+  try {
+    let body = req.body;
+
+    const { error } = userSchema.validate(body);
+
+    if (error) {
+      return res.status(400).json({
+        message: error.details[0].message,
+      });
+    } else {
+      if (body.password) {
+        const pwHash = await bcryptjs.hash(String(req.body.password), 10);
+        body = { ...body, password: pwHash };
+      }
+
+      const data = await user.findByIdAndUpdate(req.params.id, body, {
+        new: true,
+      });
+
+      if (!data) {
+        return res.status(404).json({
+          message: "Cập nhật user thất bại!",
+        });
+      }
+
+      return res.status(200).json({
+        updated: true,
+        data,
+      });
+    }
+  } catch (error) {
+    return res.status(500).json({
+      message: error.message,
+    });
+  }
+};
+
+export default { signup, signin, getAll, updateUser };

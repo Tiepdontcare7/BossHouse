@@ -1,4 +1,5 @@
 import Joi from "joi";
+import { customMessages } from "../utils/validate.js";
 
 const userSignup = Joi.object({
     username: Joi.string().min(3).max(25),
@@ -13,4 +14,13 @@ const userSignin = Joi.object({
     password: Joi.string().min(4).max(20),
 })
 
-export { userSignin, userSignup }
+const userSchema = Joi.object({
+    username: Joi.string().min(3).max(25).required().messages(customMessages),
+    email: Joi.string().email().messages(customMessages),
+    password: Joi.string().min(4).max(20).messages(customMessages),
+    address: Joi.string().messages(customMessages),
+    phoneNumber: Joi.string().messages(customMessages),
+    role: Joi.number().messages(customMessages)
+})
+
+export { userSignin, userSignup, userSchema }
