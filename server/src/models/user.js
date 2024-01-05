@@ -16,6 +16,14 @@ const user = mongoose.model(
                 type: String,
                 require: true,
             },
+            phoneNumber: {
+                type: String,
+                default: 'null',
+            },
+            address: {
+                type: String,
+                default: 'null'
+            },
             role: {
                 type: Number,
                 default: 0,

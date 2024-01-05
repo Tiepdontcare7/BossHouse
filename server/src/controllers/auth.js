@@ -1,5 +1,5 @@
 import bcryptjs from "bcryptjs";
-import { userSignin, userSignup } from "../validate/index.js";
+import { userSchema, userSignin, userSignup } from "../validate/index.js";
 import { user } from "../models/index.js";
 import jwt from "jsonwebtoken";
 
@@ -14,7 +14,7 @@ const signup = async (req, res) => {
 
     const findUser = await user.findOne({ email: req.body.email });
     if (findUser) {
-      return res.status(400).json({ messages: "Account đã tồn tại!" });
+      return res.status(400).json({ messages: "Tài khoản đã tồn tại!" });
     }
 
     const pwHash = await bcryptjs.hash(String(req.body.password), 10);
@@ -26,12 +26,12 @@ const signup = async (req, res) => {
 
     if (!data) {
       return res.status(404).json({
-        messages: "Create account failed!",
+        messages: "Đăng ký thất bại!",
       });
     }
 
     return res.status(200).json({
-      messages: "Signup successfully",
+      messages: "Đăng ký thành công!",
       data: {
         ...req.body,
         password: undefined,
@@ -57,7 +57,7 @@ const signin = async (req, res) => {
     const findUser = await user.findOne({ email: req.body.email });
     if (!findUser) {
       return res.status(404).json({
-        messages: "Account not found",
+        messages: "Tài khoản không tồn tại!",
       });
     }
 
@@ -67,18 +67,18 @@ const signin = async (req, res) => {
     );
     if (!checkPassword) {
       return res.status(404).json({
-        messages: "Password not valid",
+        messages: "Mật khẩu không chính xác!",
       });
     }
 
     const token = await jwt.sign({ findUser }, process.env.TOKEN, {
-      expiresIn: "1d",
+      expiresIn: "7d",
     });
 
     findUser.password = undefined;
 
     return res.status(200).json({
-      messages: "Signing in successfully",
+      messages: "Đăng nhập thành công!",
       findUser,
       token,
     });
@@ -95,7 +95,7 @@ const getAll = async (req, res) => {
 
     if (!data || data.length === 0) {
       return res.status(404).json({
-        message: "Không tìm thấy user!",
+        message: "Không tìm thấy danh sách user!",
       });
     }
 
@@ -107,4 +107,42 @@ const getAll = async (req, res) => {
   }
 };
 
-export default { signup, signin, getAll };
+const updateUser = async (req, res) => {
+  try {
+    let body = req.body;
+
+    const { error } = userSchema.validate(body);
+
+    if (error) {
+      return res.status(400).json({
+        message: error.details[0].message,
+      });
+    } else {
+      if (body.password) {
+        const pwHash = await bcryptjs.hash(String(req.body.password), 10);
+        body = { ...body, password: pwHash };
+      }
+
+      const data = await user.findByIdAndUpdate(req.params.id, body, {
+        new: true,
+      });
+
+      if (!data) {
+        return res.status(404).json({
+          message: "Cập nhật user thất bại!",
+        });
+      }
+
+      return res.status(200).json({
+        updated: true,
+        data,
+      });
+    }
+  } catch (error) {
+    return res.status(500).json({
+      message: error.message,
+    });
+  }
+};
+
+export default { signup, signin, getAll, updateUser };

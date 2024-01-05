@@ -1,12 +1,12 @@
 import express from "express";
 
-import { getAllOrder, addOrder } from "../controllers/order.js";
+import { getAllOrder, addOrder, updateOrder, deleteOrder } from "../controllers/order.js";
 
 const router = express.Router();
 
 router.get("/", getAllOrder);
 router.post("/add", addOrder);
-// router.post("/update", updateCartItem);
-// router.post("/delete", removeCartItem);
+router.post("/update", updateOrder);
+router.post("/delete", deleteOrder);
 
 export default router;

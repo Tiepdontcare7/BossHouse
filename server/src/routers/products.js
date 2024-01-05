@@ -4,7 +4,7 @@ import { checkPermission } from "../middlewares/checkPermissition.js";
 
 const router = express.Router();
 
-router.get("/", ProductsController.getAllproducts);
+router.get("/", ProductsController.getAllProduct);
 
 router.get("/:id", ProductsController.getOneProduct);
 

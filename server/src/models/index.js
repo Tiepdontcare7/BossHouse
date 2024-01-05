@@ -1,4 +1,5 @@
-import product from './products.js'
-import user from './user.js'
+import product from "./products.js";
+import user from "./user.js";
+import voucher from "./voucher.js";
 
-export { product, user }
+export { product, user, voucher };
