@@ -3,7 +3,7 @@
 const ProductCard = () => {
     return (
 
-        <div className=" lg:w-54 ">
+        <div className=" w-full sm:1/2 cursor-pointer  ">
             <div className="rounded-2xl my-4 overflow-hidden">
                 <img className="hover:scale-[1.1] transition-transform ease-in-out duration-500"
                     src="https://dogily.vn/wp-content/uploads/2023/11/Vay-cho-meo-1-400x400.jpg" alt="" />

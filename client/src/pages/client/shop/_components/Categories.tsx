@@ -5,8 +5,10 @@ const Categories = () => {
             <section className="my-[30px]">
                 <div className=" lg:grid lg:grid-cols-2 md:flex flex-wrap gap-5 justify-center items-center">
                     <div className="video flex flex-wrap gap-5 justify-center items-center ">
-                        <img className=" w-[80%]" src="https://chomeocanh.com/wp-content/uploads/2023/05/do-cho-cho.jpg" alt="" />
-                        <img className=" w-[80%] " src="https://chomeocanh.com/wp-content/uploads/2023/05/do-cho-cho.jpg" alt="" />
+                        {/* <img className=" w-[80%]" src="https://chomeocanh.com/wp-content/uploads/2023/05/do-cho-cho.jpg" alt="" />
+                        <img className=" w-[80%] " src="https://chomeocanh.com/wp-content/uploads/2023/05/do-cho-cho.jpg" alt="" /> */}
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/31RzahshWCM?si=G0Tgvvya38ToGNyR" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/Mv6ScSEM-LA?si=vvkqGb2Pf1CillqP" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                     </div>
                     <div className="categories">
 
