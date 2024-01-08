@@ -13,40 +13,57 @@ import ListUsers from "./pages/admin/users/ListUsers";
 import Settings from "./pages/admin/settings/Settings";
 import ContactPage from "./pages/client/Contact";
 import Blog from "./pages/client/Blog/Blog";
-import  Cart  from "./pages/client/Cart";
+import Cart from "./pages/Cart/Cart";
 import { BlogDeatl } from "./pages/client/Blog/BlogDeatl";
 import Shop from "./pages/client/Shop/Shop";
+import Signin from "./pages/client/Account/Signin";
+import Signup from "./pages/client/Account/Signup";
+import Forgot from "./pages/client/Account/Forgot";
+import Checkout from "./pages/Cart/Checkout";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
+        <Route path="checkout" element={<Checkout />} />
           <Route path="/" element={<BaseLayout />}>
             <Route path="" element={<HomePage />} />
             <Route path="detail/:id" element={<DetailPage />} />
-            <Route path="contact" element={<ContactPage/>}/>
-            <Route path="blog" element={<Blog/>}/>
-            <Route path="blogDetail" element={<BlogDeatl/>}/>
-            <Route path="cart" element={<Cart/>}/>
+            {/* blog */}
+            <Route path="contact" element={<ContactPage />} />
+            <Route path="blog" element={<Blog />} />
+            <Route path="blogDetail" element={<BlogDeatl />} />
+            {/* cart */}
+            <Route path="cart" element={<Cart />} />
+           
+
             <Route path="dogshop" element={<Shop />} />
             <Route path="catshop" element={<Shop />} />
+
+            {/* user */}
+            <Route path="signin" element={<Signin />} />
+            <Route path="signup" element={<Signup />} />
+            <Route path="/loss-password" element={<Forgot />} />
+
           </Route>
 
           <Route path="/admin/" element={<AdminLayout />}>
+            {/* dashboard */}
             <Route index element={<Dashboard />} />
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="products" element={<ListProduct />} />
+            <Route path="settings" element={<Settings />} />
+            <Route path="chart" element={<AdminChart />} />
+            <Route path="tables" element={<AdminTable />} />
 
+            {/* manage */}
             <Route path="category" element={<ListCategory />} />
             <Route path="users" element={<ListUsers />} />
-            <Route path="settings" element={<Settings />} />
             <Route path="khachhang" element={<ListCategory />} />
             <Route path="hoadon" element={<ListUsers />} />
             <Route path="donhang" element={<Settings />} />
 
-            <Route path="chart" element={<AdminChart />} />
-            <Route path="tables" element={<AdminTable />} />
           </Route>
 
           <Route path="*" element={<NotFound />} />

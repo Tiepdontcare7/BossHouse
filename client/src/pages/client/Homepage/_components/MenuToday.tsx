@@ -9,7 +9,7 @@ const MenuToday = () => {
     return (
         <section className="py-16 bg-[#f5f1dd]">
             <div className="text-center">
-                <h2 className="font-bold text-3xl mb-4 text-[#000]">BOSS HOUSE CÓ NHỮNG GÌ</h2>
+                <h2 className="font-bold xl:text-3xl text-2xl mb-4 ">BOSSHOUSE CÓ NHỮNG GÌ</h2>
                 <h4 className="font-bold text-base mb-4"> DỊCH VỤ VÀ THỨC ĂN  </h4>
                 <div>
                     <img className="block mx-auto" src="/images/ngoi-sao.png" alt="" />
@@ -52,7 +52,7 @@ const MenuToday = () => {
                                 src="/images/service1.jpg"
                                 alt="Bonnie Avatar"
                             />
-                            <h4 className="text-black mb-3 font-medium ">CẮT TỈA LÔNG CHÓ</h4>
+                            <h4 className=" mb-3 font-medium ">CẮT TỈA LÔNG CHÓ</h4>
                             <p className="text-red-500 ">Giá từ 120.000 VNĐ - 240.000 VNĐ</p>
                             <button className="bg-[#000]   w-full text-white rounded-sm mt-3 py-[3px] hover:bg-slate-500">
                                 Xem
@@ -67,7 +67,7 @@ const MenuToday = () => {
                                 src="/images/service2.jpg"
                                 alt="Bonnie Avatar"
                             />
-                            <h4 className="text-black  mb-3 font-medium ">CẠO LÔNG CHÓ MÈO</h4>
+                            <h4 className="  mb-3 font-medium ">CẠO LÔNG CHÓ MÈO</h4>
                             <p className="text-red-500 ">Giá từ 120.000 VNĐ - 240.000 VNĐ</p>
                             <button className="bg-[#000]   w-full text-white rounded-sm mt-3 py-[3px] hover:bg-slate-500">
                                 Xem
@@ -82,7 +82,7 @@ const MenuToday = () => {
                                 src="/images/service3.jpg"
                                 alt="Bonnie Avatar"
                             />
-                            <h4 className="text-black  mb-3 font-medium ">TẮM CHO CHÓ MÈO</h4>
+                            <h4 className="  mb-3 font-medium ">TẮM CHO CHÓ MÈO</h4>
                             <p className="text-red-500 ">Giá từ 120.000 VNĐ - 240.000 VNĐ</p>
                             <button className="bg-[#000]   w-full text-white rounded-sm mt-3 py-[3px] hover:bg-slate-500">
                                 Xem
@@ -97,7 +97,7 @@ const MenuToday = () => {
                                 src="/images/service4.jpg"
                                 alt="Bonnie Avatar"
                             />
-                            <h4 className="text-black mb-3 font-medium  ">CẮT TỈA MÓNG CHÂN</h4>
+                            <h4 className=" mb-3 font-medium  ">CẮT TỈA MÓNG CHÂN</h4>
                             <p className="text-red-500 ">Giá từ 120.000 VNĐ - 240.000 VNĐ</p>
                             <button className="bg-[#000]   w-full text-white rounded-sm mt-3 py-[3px] hover:bg-slate-500">
                                 Xem
@@ -112,7 +112,7 @@ const MenuToday = () => {
                                 src="/images/service5.jpg"
                                 alt="Bonnie Avatar"
                             />
-                            <h4 className="text-black  mb-3 font-medium ">SPA CHO CHÓ MÈO</h4>
+                            <h4 className="  mb-3 font-medium ">SPA CHO CHÓ MÈO</h4>
                             <p className="text-red-500 ">Giá từ 120.000 VNĐ - 240.000 VNĐ</p>
                             <button className="bg-[#000]   w-full text-white rounded-sm mt-3 py-[3px] hover:bg-slate-500">
                                 Xem
@@ -127,7 +127,7 @@ const MenuToday = () => {
                                 src="/images/service6.jpg"
                                 alt="Bonnie Avatar"
                             />
-                            <h4 className="text-black  mb-3 font-medium ">THỨC ĂN CHO CHÓ </h4>
+                            <h4 className="  mb-3 font-medium ">THỨC ĂN CHO CHÓ </h4>
                             <p className="text-red-500 ">Giá từ 120.000 VNĐ - 240.000 VNĐ</p>
                             <button className="bg-[#000]   w-full text-white rounded-sm mt-3 py-[3px] hover:bg-slate-500">
                                 Xem
@@ -142,7 +142,7 @@ const MenuToday = () => {
                                 src="/images/service7.jpg"
                                 alt="Bonnie Avatar"
                             />
-                            <h4 className="text-black  mb-3 font-medium ">THỨC ĂN CHO MÈO</h4>
+                            <h4 className="  mb-3 font-medium ">THỨC ĂN CHO MÈO</h4>
                             <p className="text-red-500 ">Giá từ 120.000 VNĐ - 240.000 VNĐ</p>
                             <button className="bg-[#000]   w-full text-white rounded-sm mt-3 py-[3px] hover:bg-slate-500">
                                 Xem
@@ -157,7 +157,7 @@ const MenuToday = () => {
                                 src="/images/service8.jpg"
                                 alt="Bonnie Avatar"
                             />
-                            <h4 className="text-black  mb-3 font-medium "> CÁT VỆ SINH CHÓ MÈO</h4>
+                            <h4 className="  mb-3 font-medium "> CÁT VỆ SINH CHÓ MÈO</h4>
                             <p className="text-red-500 ">Giá từ 120.000 VNĐ - 240.000 VNĐ</p>
                             <button className="bg-[#000]   w-full text-white rounded-sm mt-3 py-[3px] hover:bg-slate-500">
                                 Xem

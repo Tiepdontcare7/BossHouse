@@ -9,13 +9,13 @@ import 'swiper/css/navigation'; const Chains = () => {
         <section className="section-chains grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-5 grid-cols-1 relative  bg-blue-100 h-auto border">
             <div className="time flex items-center justify-center col-span-2">
                 <div className="text-center mt-20">
-                    <h4 className="font-bold text-3xl  text-[#000] ">GIỜ MỞ CỬA:</h4>
+                    <h4 className="font-bold xl:text-3xl text-2xl  text-[#000] ">GIỜ MỞ CỬA:</h4>
                     <p className='py-4'>8am - 10pm<br />
                         Tất cả các ngày trong tuần</p>
                     <p className='xl:w-[400px] w-[300px]'>Hãy ghé BossHouse : Nơi giúp bạn có nhiều thông tin bổ ích trong việc  nuôi chó mèo, chăm sóc thú cưng tại gia đình. !</p>
                     <p className="text-[22px] py-4 text-[#000] font-semibold">— — — —<br />
                         HOTLINE:<br />
-                        0923.069.069</p>
+                        0366.292.585</p>
                 </div>
             </div>
             <div className="swiper relative col-span-3 m-20 h-full mx-[15px]">
