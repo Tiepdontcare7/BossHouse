@@ -6,6 +6,7 @@ import uploadRouter from "./upload.js";
 import mailRouter from "./mail.js";
 import orderRouter from "./order.js";
 import blogRouter from "./blogs.js";
+import voucherRouter from "./voucher.js";
 
 export {
   ProductRouter,
@@ -15,5 +16,6 @@ export {
   uploadRouter,
   mailRouter,
   orderRouter,
-  blogRouter
+  blogRouter,
+  voucherRouter
 };

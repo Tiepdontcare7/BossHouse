@@ -2,7 +2,24 @@ import order from "../models/order.js";
 
 export const getAllOrder = async (req, res) => {
   try {
-    const orders = await order.find({});
+    const {
+      _limit = 10,
+      _page = 1,
+      _order = "asc",
+      _sort = "createdAt",
+    } = req.query;
+
+    const options = {
+      page: _page,
+      limit: _limit,
+      order: _order,
+      sort: {
+        [_sort]: _order === "asc" ? 1 : -1,
+      },
+    };
+
+    // const orders = await order.find({});
+    const orders = await order.paginate({}, options);
     return res.status(200).json(orders);
   } catch (error) {
     return res.status(500).json({ error: error.message });
@@ -11,16 +28,7 @@ export const getAllOrder = async (req, res) => {
 
 export const addOrder = async (req, res) => {
   try {
-    const {
-      userId,
-      products,
-      dateTime,
-      name,
-      phone,
-      address,
-      message,
-      paymentMethod,
-    } = req.body;
+    const { userId, products, fullName, phoneNumber, address } = req.body;
 
     // Kiểm tra đồng bộ để tránh tình trạng race condition
     const userOrder = await order.findOne({ userId });
@@ -29,17 +37,17 @@ export const addOrder = async (req, res) => {
     if (!userOrder) {
       const newOrder = await order.create({
         userId,
-        name,
+        fullName,
         address,
-        phone,
-        paymentMethod,
+        phoneNumber,
         products: products.map((p) => ({
           productId: p.productId,
           name: p.name,
           price: p.price,
           quantity: p.quantity,
-          message,
-          dateTime,
+          message: p.message,
+          dateTime: p.dateTime,
+          paymentMethod: p.paymentMethod,
         })),
       });
 
@@ -59,7 +67,8 @@ export const addOrder = async (req, res) => {
         name: p.name,
         price: p.price,
         quantity: p.quantity,
-        dateTime,
+        dateTime: p.dateTime,
+        paymentMethod: p.paymentMethod,
       });
     });
 
@@ -74,47 +83,51 @@ export const addOrder = async (req, res) => {
   }
 };
 
-export const updateCartItem = async (req, res) => {
+export const updateOrder = async (req, res) => {
   try {
-    const { userId, productId, quantity, name } = req.body;
-    const Cart = await cart.findOne({ userId });
+    const { userId, orderProductId, status } = req.body;
 
-    if (!Cart) {
-      return res.status(404).json({ error: "Cart not found" });
+    const userOrder = await order.findOne({ userId });
+
+    if (!userOrder) {
+      return res
+        .status(404)
+        .json({ error: "Đơn hàng của người dùng không khả dụng!" });
     }
 
-    const productIndex = Cart.products.findIndex((item) => item.name == name);
+    const productIndex = userOrder.products.findIndex(
+      (p) => p._id == orderProductId
+    );
+    userOrder.products[productIndex].status = status;
 
-    if (productIndex === -1) {
-      return res.status(404).json({ error: "Product not found in cart" });
-    }
+    const data = await userOrder.save();
 
-    Cart.products[productIndex].quantity = quantity;
-
-    const updatedCart = await Cart.save();
-
-    res.json(updatedCart);
+    return res.status(200).json({ updated: true, data });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 };
 
-export const removeCartItem = async (req, res) => {
+export const deleteOrder = async (req, res) => {
   try {
-    const { userId, productId, name } = req.body;
+    const { userId, orderProductId } = req.body;
 
-    const userCart = await cart.findOne({ userId });
+    const userOrder = await order.findOne({ userId });
 
-    if (!userCart) {
-      return res.status(404).json({ error: "Cart not found" });
+    if (!userOrder) {
+      return res
+        .status(404)
+        .json({ error: "Đơn hàng của người dùng không khả dụng!" });
     }
 
-    userCart.products = userCart.products.filter((item) => item.name != name);
+    userOrder.products = userOrder.products.filter(
+      (p) => p._id != orderProductId
+    );
 
-    const updatedCart = await userCart.save();
+    const data = await userOrder.save();
 
-    return res.status(200).json({ deleted: true, updatedCart });
+    return res.status(200).json({ deleted: true, data });
   } catch (error) {
-    return res.status(500).json({ error: error.message });
+    res.status(500).json({ error: error.message });
   }
 };

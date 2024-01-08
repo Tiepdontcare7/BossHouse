@@ -8,10 +8,10 @@ router.get("/", CategoryController.getAll);
 
 router.get("/:id", CategoryController.getOne);
 
-router.post("/add", CategoryController.addCate);
+router.post("/add", checkPermission, CategoryController.addCate);
 
-router.put("/update/:id", CategoryController.updateCate);
+router.put("/update/:id", checkPermission, CategoryController.updateCate);
 
-router.delete("/delete/:id", CategoryController.deleteCate);
+router.delete("/delete/:id",checkPermission, CategoryController.deleteCate);
 
 export default router;

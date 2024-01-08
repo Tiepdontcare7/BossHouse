@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import mongoosePaginate from "mongoose-paginate-v2";
 
 const orderSchema = new mongoose.Schema(
   {
@@ -7,12 +8,12 @@ const orderSchema = new mongoose.Schema(
       ref: "Users",
       required: true,
     },
-    name: {
+    fullName: {
       type: String,
       required: true,
     },
-    phone: {
-      type: Number,
+    phoneNumber: {
+      type: String,
       required: true,
     },
     address: {
@@ -23,7 +24,7 @@ const orderSchema = new mongoose.Schema(
       {
         productId: {
           type: mongoose.Schema.Types.ObjectId,
-          ref: "Orders",
+          // ref: "Orders",
           required: true,
         },
         name: {
@@ -31,7 +32,7 @@ const orderSchema = new mongoose.Schema(
           required: true,
         },
         price: {
-          type: String,
+          type: Number,
           required: true,
         },
         quantity: {
@@ -60,15 +61,15 @@ const orderSchema = new mongoose.Schema(
           default: "Chờ Xác Nhận",
           required: true,
         },
-        // paymentMethod: {
-        //   type: String,
-        //   required: true,
-        // },
+        paymentMethod: {
+          type: String,
+          required: true,
+        },
       },
     ],
   },
   { versionKey: false, timestamps: true }
-);
+).plugin(mongoosePaginate);
 
 const order = mongoose.model("Order", orderSchema);
 
