@@ -1,10 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import BaseLayout from "./layout/BaseLayout";
-import DetailPage from "./pages/client/DetailPage";
+import DetailPage from "./pages/client/detail/DetailPage";
 import HomePage from "./pages/client/HomePage";
 import NotFound from "./pages/errors/404";
 import Dashboard from "./pages/admin/dashboard/Dashboard";
 import ListProduct from "./pages/admin/products/ListProduct";
+import Shop from "./pages/client/shop/Shop";
 import AdminLayout from "./layout/AdminLayout";
 import AdminChart from "./components/AdminChart";
 import AdminTable from "./components/AdminTable";
@@ -18,6 +19,8 @@ function App() {
         <Routes>
           <Route path="/" element={<BaseLayout />}>
             <Route path="" element={<HomePage />} />
+            <Route path="dogshop" element={<Shop />} />
+            <Route path="catshop" element={<Shop />} />
             <Route path="detail/:id" element={<DetailPage />} />
           </Route>
 

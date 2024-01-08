@@ -9,6 +9,7 @@ import {
   uploadRouter,
   mailRouter,
   orderRouter,
+  blogRouter,
   voucherRouter
 } from "./routers/index.js";
 import dotenv from "dotenv";
@@ -28,6 +29,7 @@ app.use("/image", uploadRouter);
 app.use("/mail", mailRouter);
 app.use("/card", CartRouter);
 app.use("/order", orderRouter);
+app.use("/blog", blogRouter);
 app.use("/voucher", voucherRouter);
 
 paypal.configure({
