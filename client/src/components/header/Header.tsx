@@ -43,7 +43,7 @@ const Header = () => {
             ref={megaE}
             className=" w-full max-w-screen-2xl fixed top-0 z-50 transition-all duration-700  ease-in-out bg-white"
         >
-            <nav className="bg-white border-gray-200 dark:bg-gray-900  ">
+            <nav className="bg-white border-gray-200  ">
                 <div ref={megaE} className={' xl:flex md:block hidden justify-between px-2 w-full h-[50px] bg-[#2e2f31e5] '}>
                     <ul className="flex xl:block md:hidden xl:my-4 ">
                         <div className="flex justify-center gap-3 text-white ml-3">
@@ -138,9 +138,9 @@ const Header = () => {
                         <img className="h-[60px] " src="/images/logo.png" alt="" />
                     </Link>
                     <div className="flex items-center md:order-2  space-x-0 md:space-x-2 rtl:space-x-reverse">
-                        <Link to="/signin" className="shadow-xl xl:text-gray-900 dark:text-white xl:bg-[#f5f5f5] xl:hover:bg-gray-50 focus:ring-4 xl:ring-gray-300 font-medium rounded-lg xl:text-sm text-xs px-4 py-2 md:px-5 md:py-2.5 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800 md:bg-blue-700 md:text-white xl:mt-0 md:mt-2  ">Đăng Nhập</Link>
-                        <Link to="/signup" className="shadow-xl text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg xl:text-sm text-xs px-4 py-2 md:px-5 md:py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 xl:block md:hidden ">Đăng Ký</Link>
-                        <button onClick={onClick} data-collapse-toggle="mega-menu-icons" type="button" className=" inline-flex items-center p-2 w-10 h-10 justify-center text-sm  rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mega-menu-icons" aria-expanded="false">
+                        <Link to="/signin" className="shadow-xl xl:text-gray-900  xl:bg-[#f5f5f5] xl:hover:bg-gray-50 focus:ring-4 xl:ring-gray-300 font-medium rounded-lg xl:text-sm text-xs px-4 py-2 md:px-5 md:py-2.5  focus:outline-none  md:bg-blue-700 md:text-white xl:mt-0 md:mt-2  ">Đăng Nhập</Link>
+                        <Link to="/signup" className="shadow-xl text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg xl:text-sm text-xs px-4 py-2 md:px-5 md:py-2.5  focus:outline-none  xl:block md:hidden ">Đăng Ký</Link>
+                        <button onClick={onClick} data-collapse-toggle="mega-menu-icons" type="button" className=" inline-flex items-center p-2 w-10 h-10 justify-center text-sm  rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 " aria-controls="mega-menu-icons" aria-expanded="false">
                             <span className="sr-only">Open main menu</span>
                             <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
@@ -150,81 +150,81 @@ const Header = () => {
                     <div ref={btnMobile} id="mega-menu-icons" className=" items-center justify-between hidden w-full  md:flex md:w-auto md:order-1">
                         <ul className="flex flex-col mt-2 font-medium md:flex-row md:mt-0 xl:space-x-8 md:space-x-3 rtl:space-x-reverse ">
                             <li>
-                                <Link to="/" className="font-bold  xl:text-sm md:text-xs block py-2 px-3 hover:text-blue-600 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-blue-500 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700" aria-current="page"> TRANG CHỦ</Link>
+                                <Link to="/" className="font-bold  xl:text-sm md:text-xs block py-2 px-3 hover:text-blue-600 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0" aria-current="page"> TRANG CHỦ</Link>
                             </li>
                             <li className="group ">
                                 <Link to="/catshop">
-                                    <button id="mega-menu-icons-dropdown-button" data-dropdown-toggle="mega-menu-icons-dropdown" className=" font-bold xl:text-sm md:text-xs flex items-center justify-between w-full py-2 px-3   hover:text-blue-600 border-b border-gray-100 md:w-auto hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
+                                    <button id="mega-menu-icons-dropdown-button" data-dropdown-toggle="mega-menu-icons-dropdown" className=" font-bold xl:text-sm md:text-xs flex items-center justify-between w-full py-2 px-3   hover:text-blue-600 border-b border-gray-100 md:w-auto hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0">
                                         SẢN PHẨM
                                         <svg className="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
                                         </svg>
                                     </button></Link>
-                                <div id="mega-menu-icons-dropdown" className="absolute z-10 group-hover:grid hidden w-auto grid-cols-2 text-sm bg-white border border-gray-100 rounded-lg shadow-md dark:border-gray-700 md:grid-cols-3 dark:bg-gray-700">
-                                    <div className="p-4 pb-0 md:pb-4 dark:text-white">
+                                <div id="mega-menu-icons-dropdown" className="absolute z-10 group-hover:grid hidden w-auto grid-cols-2 text-sm bg-white border border-gray-100 rounded-lg shadow-md  md:grid-cols-3 ">
+                                    <div className="p-4 pb-0 md:pb-4 ">
                                         <ul className="space-y-4" aria-labelledby="mega-menu-icons-dropdown-button">
                                             <li>
-                                                <Link to="#" className="flex items-center  dark:text-gray-400 hover:bg-blue-600 hover:text-white h-8 hover:rounded-[50px] px-3 dark:hover:text-blue-500 group">
+                                                <Link to="#" className="flex items-center   hover:bg-blue-600 hover:text-white h-8 hover:rounded-[50px] px-3  group">
                                                     Thức ăn cho chó
                                                 </Link>
                                             </li>
                                             <li>
-                                                <Link to="#" className="flex items-center  dark:text-gray-400 hover:bg-blue-600 hover:text-white h-8 hover:rounded-[50px] px-3 dark:hover:text-blue-500 group">
+                                                <Link to="#" className="flex items-center   hover:bg-blue-600 hover:text-white h-8 hover:rounded-[50px] px-3  group">
                                                     Thức ăn cho mèo
                                                 </Link>
                                             </li>
                                             <li>
-                                                <Link to="#" className="flex items-center  dark:text-gray-400 hover:bg-blue-600 hover:text-white h-8 hover:rounded-[50px] px-3 dark:hover:text-blue-500 group">
+                                                <Link to="#" className="flex items-center   hover:bg-blue-600 hover:text-white h-8 hover:rounded-[50px] px-3  group">
                                                     Cát vệ sinh
                                                 </Link>
                                             </li>
                                             <li>
-                                                <Link to="#" className="flex items-center  dark:text-gray-400 hover:bg-blue-600 hover:text-white h-8 hover:rounded-[50px] px-3 dark:hover:text-blue-500 group">
+                                                <Link to="#" className="flex items-center   hover:bg-blue-600 hover:text-white h-8 hover:rounded-[50px] px-3  group">
                                                     Súp thưởng
                                                 </Link>
                                             </li>
                                         </ul>
                                     </div>
-                                    <div className="p-4 pb-0 md:pb-4 dark:text-white">
+                                    <div className="p-4 pb-0 md:pb-4 ">
                                         <ul className="space-y-4">
                                             <li>
-                                                <Link to="#" className="flex items-center  dark:text-gray-400 hover:bg-blue-600 hover:text-white h-8 hover:rounded-[50px] px-3 dark:hover:text-blue-500 group">
+                                                <Link to="#" className="flex items-center   hover:bg-blue-600 hover:text-white h-8 hover:rounded-[50px] px-3  group">
                                                     Chuồng chó , mèo
                                                 </Link>
                                             </li>
                                             <li>
-                                                <Link to="#" className="flex items-center  dark:text-gray-400 hover:bg-blue-600 hover:text-white h-8 hover:rounded-[50px] px-3 dark:hover:text-blue-500 group">
+                                                <Link to="#" className="flex items-center   hover:bg-blue-600 hover:text-white h-8 hover:rounded-[50px] px-3  group">
                                                     Cào móng
                                                 </Link>
                                             </li>
                                             <li>
-                                                <Link to="#" className="flex items-center  dark:text-gray-400 hover:bg-blue-600 hover:text-white h-8 hover:rounded-[50px] px-3 dark:hover:text-blue-500 group">
+                                                <Link to="#" className="flex items-center   hover:bg-blue-600 hover:text-white h-8 hover:rounded-[50px] px-3  group">
                                                     Quần áo
                                                 </Link>
                                             </li>
                                             <li>
-                                                <Link to="#" className="flex items-center  dark:text-gray-400 hover:bg-blue-600 hover:text-white h-8 hover:rounded-[50px] px-3 dark:hover:text-blue-500 group">
+                                                <Link to="#" className="flex items-center   hover:bg-blue-600 hover:text-white h-8 hover:rounded-[50px] px-3  group">
                                                     Sữa tắm - Dẩu gội
                                                 </Link>
                                             </li>
                                         </ul>
                                     </div>
-                                    <div className="p-4 dark:text-white">
+                                    <div className="p-4 ">
                                         <ul className="space-y-4">
                                             <li>
-                                                <Link to="#" className="flex items-center  dark:text-gray-400 hover:bg-blue-600 hover:text-white h-8 hover:rounded-[50px] px-3 dark:hover:text-blue-500 group">
+                                                <Link to="#" className="flex items-center   hover:bg-blue-600 hover:text-white h-8 hover:rounded-[50px] px-3  group">
 
                                                     Pate
                                                 </Link>
                                             </li>
                                             <li>
-                                                <a href="#" className="flex items-center  dark:text-gray-400 hover:bg-blue-600 hover:text-white h-8 hover:rounded-[50px] px-3 dark:hover:text-blue-500 group">
+                                                <a href="#" className="flex items-center   hover:bg-blue-600 hover:text-white h-8 hover:rounded-[50px] px-3  group">
 
                                                     Balo
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#" className="flex items-center  dark:text-gray-400 hover:bg-blue-600 hover:text-white h-8 hover:rounded-[50px] px-3 dark:hover:text-blue-500 group">
+                                                <a href="#" className="flex items-center   hover:bg-blue-600 hover:text-white h-8 hover:rounded-[50px] px-3  group">
 
                                                     Đồ chơi
                                                 </a>
@@ -235,53 +235,53 @@ const Header = () => {
                             </li>
                             <li className="group ">
                                 <Link to="/dogshop">
-                                    <button id="mega-menu-icons-dropdown-button" data-dropdown-toggle="mega-menu-icons-dropdown" className=" font-bold xl:text-sm md:text-xs flex items-center justify-between w-full py-2 px-3   hover:text-blue-600 border-b border-gray-100 md:w-auto hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">
+                                    <button id="mega-menu-icons-dropdown-button" data-dropdown-toggle="mega-menu-icons-dropdown" className=" font-bold xl:text-sm md:text-xs flex items-center justify-between w-full py-2 px-3   hover:text-blue-600 border-b border-gray-100 md:w-auto hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 ">
                                         DỊCH VỤ
                                         <svg className="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
                                         </svg>
                                     </button></Link>
-                                <div id="mega-menu-icons-dropdown" className="absolute z-10 group-hover:grid hidden w-auto grid-cols-3 text-sm bg-white border border-gray-100 rounded-lg shadow-md dark:border-gray-700 md:grid-cols-3 dark:bg-gray-700">
-                                    <div className="p-4 pb-0 md:pb-4 dark:text-white">
+                                <div id="mega-menu-icons-dropdown" className="absolute z-10 group-hover:grid hidden w-auto grid-cols-3 text-sm bg-white border border-gray-100 rounded-lg shadow-md ">
+                                    <div className="p-4 pb-0 md:pb-4 ">
                                         <ul className="space-y-4 " aria-labelledby="mega-menu-icons-dropdown-button">
                                             <li>
-                                                <a href="#" className="flex items-center  dark:text-gray-400 hover:bg-blue-600 hover:text-white h-8 hover:rounded-[50px] px-3 dark:hover:text-blue-500 group">
+                                                <a href="#" className="flex items-center   hover:bg-blue-600 hover:text-white h-8 hover:rounded-[50px] px-3  group">
                                                     Tắm gội
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#" className="flex items-center  dark:text-gray-400 hover:bg-blue-600 hover:text-white h-8 hover:rounded-[50px] px-3 dark:hover:text-blue-500 group">
+                                                <a href="#" className="flex items-center   hover:bg-blue-600 hover:text-white h-8 hover:rounded-[50px] px-3  group">
 
                                                     Spa
                                                 </a>
                                             </li>
                                         </ul>
                                     </div>
-                                    <div className="p-4 pb-0 md:pb-4 dark:text-white">
+                                    <div className="p-4 pb-0 md:pb-4 ">
                                         <ul className="space-y-4">
                                             <li>
-                                                <a href="#" className="flex items-center  dark:text-gray-400 hover:bg-blue-600 hover:text-white h-8 hover:rounded-[50px] px-3 dark:hover:text-blue-500 group">
+                                                <a href="#" className="flex items-center   hover:bg-blue-600 hover:text-white h-8 hover:rounded-[50px] px-3  group">
 
                                                     Uốn tạo kiểu
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#" className="flex items-center  dark:text-gray-400 hover:bg-blue-600 hover:text-white h-8 hover:rounded-[50px] px-3 dark:hover:text-blue-500 group">
+                                                <a href="#" className="flex items-center   hover:bg-blue-600 hover:text-white h-8 hover:rounded-[50px] px-3  group">
 
                                                     Nhuộm
                                                 </a>
                                             </li>
                                         </ul>
                                     </div>
-                                    <div className="p-4 pb-0 md:pb-4 dark:text-white">
+                                    <div className="p-4 pb-0 md:pb-4 ">
                                         <ul className="space-y-4" aria-labelledby="mega-menu-icons-dropdown-button">
                                             <li>
-                                                <Link to="#" className="flex items-center  dark:text-gray-400 hover:bg-blue-600 hover:text-white h-8 hover:rounded-[50px] px-3 dark:hover:text-blue-500 group">
+                                                <Link to="#" className="flex items-center   hover:bg-blue-600 hover:text-white h-8 hover:rounded-[50px] px-3  group">
                                                     Cắt móng
                                                 </Link>
                                             </li>
                                             <li>
-                                                <Link to="#" className="flex items-center  dark:text-gray-400 hover:bg-blue-600 hover:text-white h-8 hover:rounded-[50px] px-3 dark:hover:text-blue-500 group">
+                                                <Link to="#" className="flex items-center   hover:bg-blue-600 hover:text-white h-8 hover:rounded-[50px] px-3  group">
                                                     Cắt tỉa
                                                 </Link>
                                             </li>
@@ -290,13 +290,13 @@ const Header = () => {
                                 </div>
                             </li>
                             <li>
-                                <Link to="/blog" className="font-bold xl:text-sm md:text-xs block py-2 px-3  hover:text-blue-600 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"> TIN TỨC</Link>
+                                <Link to="/blog" className="font-bold xl:text-sm md:text-xs block py-2 px-3  hover:text-blue-600 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0  "> TIN TỨC</Link>
                             </li>
                             <li>
-                                <Link to="/contact" className="font-bold xl:text-sm md:text-xs block py-2 px-3  hover:text-blue-600 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"> LIÊN HỆ</Link>
+                                <Link to="/contact" className="font-bold xl:text-sm md:text-xs block py-2 px-3  hover:text-blue-600 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0  "> LIÊN HỆ</Link>
                             </li>
                             <li>
-                                <Link to="/cart" className="font-bold xl:text-sm md:text-xs xl:hidden md:hidden block py-2 px-3  hover:text-blue-600 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"> <i className="fa-solid fa-cart-shopping text-base"></i></Link>
+                                <Link to="/cart" className="font-bold xl:text-sm md:text-xs xl:hidden md:hidden block py-2 px-3  hover:text-blue-600 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0  "> <i className="fa-solid fa-cart-shopping text-base"></i></Link>
                             </li>
                         </ul>
                     </div>

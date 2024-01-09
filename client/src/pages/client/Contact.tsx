@@ -15,42 +15,42 @@ const ContactPage = () => {
 
                 <form className="max-w-md lg:ml-[200px] lg:mt-10 md:ml-[20px] md:mt-[20px] ml-[20px] pt-[10px]">
                     <div className="mb-4">
-                        <label htmlFor="large-input" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                        <label htmlFor="large-input" className="block mb-2 text-sm font-medium text-gray-900 ">
                             Họ và tên
                         </label>
                         <input
                             type="text"
                             id="large-input"
-                            className="block lg:w-full md:w-[330px] w-[450px]  p-3 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            className="block lg:w-full md:w-[330px] w-[450px]  p-3 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 "
                         />
                     </div>
                     <div className="mb-4">
-                        <label htmlFor="base-input" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                        <label htmlFor="base-input" className="block mb-2 text-sm font-medium text-gray-900 ">
                             Địa chỉ email
                         </label>
                         <input
                             type="text"
                             id="base-input"
-                            className="block lg:w-full md:w-[330px]  w-[450px] p-3 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            className="block lg:w-full md:w-[330px]  w-[450px] p-3 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-sm focus:ring-blue-500 focus:border-blue-500 "
                         />
                     </div>
                     <div className="mb-4">
-                        <label htmlFor="small-input" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                        <label htmlFor="small-input" className="block mb-2 text-sm font-medium text-gray-900 ">
                             Số điện thoại
                         </label>
                         <input
                             type="text"
                             id="small-input"
-                            className="block lg:w-full md:w-[330px]  w-[450px] p-3 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            className="block lg:w-full md:w-[330px]  w-[450px] p-3 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 "
                         />
                     </div>
                     <div className="mb-4">
-                        <label htmlFor="message-input" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                        <label htmlFor="message-input" className="block mb-2 text-sm font-medium text-gray-900 ">
                             Nội dung
                         </label>
                         <textarea
                             id="message-input"
-                            className="block lg:w-full md:w-[330px] p-3  w-[450px] text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs h-40 resize-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            className="block lg:w-full md:w-[330px] p-3  w-[450px] text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs h-40 resize-none focus:ring-blue-500 focus:border-blue-500 "
                         />
                     </div>
                     <div className="text-[#5b6f4a] lg:text-[16px] md:ml-[0] sm:ml-[20px]">Quý khách vui lòng mô tả chi tiết</div>
