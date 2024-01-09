@@ -133,13 +133,13 @@ const Header = () => {
                     </div>
                 </div>
 
-                <div className="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto xl:mt-0 md:mt-2 md:mx-2  mt-2 xl:p-1 ">
-                    <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-                        <img className="h-[70px] " src="/images/logo.png" alt="" />
+                <div className="bg-[#ffffffce] px-4 py-2  flex flex-wrap items-center justify-between max-w-full mx-auto  shadow-xl md:mx-2   xl:p-1 ">
+                    <Link to="/" className="flex items-center space-x-3  rtl:space-x-reverse">
+                        <img className="h-[60px] " src="/images/logo.png" alt="" />
                     </Link>
-                    <div className="flex items-center md:order-2 space-x-0 md:space-x-2 rtl:space-x-reverse">
-                        <Link to="/signin" className="xl:text-gray-900 dark:text-white xl:bg-white xl:hover:bg-gray-50 focus:ring-4 xl:ring-gray-300 font-medium rounded-lg xl:text-sm text-xs px-4 py-2 md:px-5 md:py-2.5 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800 md:bg-blue-700 md:text-white xl:mt-0 md:mt-2  ">Đăng Nhập</Link>
-                        <Link to="/signup" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg xl:text-sm text-xs px-4 py-2 md:px-5 md:py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 xl:block md:hidden ">Đăng Ký</Link>
+                    <div className="flex items-center md:order-2  space-x-0 md:space-x-2 rtl:space-x-reverse">
+                        <Link to="/signin" className="shadow-xl xl:text-gray-900 dark:text-white xl:bg-[#f5f5f5] xl:hover:bg-gray-50 focus:ring-4 xl:ring-gray-300 font-medium rounded-lg xl:text-sm text-xs px-4 py-2 md:px-5 md:py-2.5 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800 md:bg-blue-700 md:text-white xl:mt-0 md:mt-2  ">Đăng Nhập</Link>
+                        <Link to="/signup" className="shadow-xl text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg xl:text-sm text-xs px-4 py-2 md:px-5 md:py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 xl:block md:hidden ">Đăng Ký</Link>
                         <button onClick={onClick} data-collapse-toggle="mega-menu-icons" type="button" className=" inline-flex items-center p-2 w-10 h-10 justify-center text-sm  rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mega-menu-icons" aria-expanded="false">
                             <span className="sr-only">Open main menu</span>
                             <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">

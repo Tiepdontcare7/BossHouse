@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation'; const Chains = () => {
     return <>
-        <section className="section-chains grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-5 grid-cols-1 relative  bg-blue-100 h-auto border">
+        <section className="section-chains grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-5 grid-cols-1 relative  bg-blue-50 h-auto border">
             <div className="time flex items-center justify-center col-span-2">
                 <div className="text-center mt-20">
                     <h4 className="font-bold xl:text-3xl text-2xl  text-[#000] ">GIỜ MỞ CỬA:</h4>

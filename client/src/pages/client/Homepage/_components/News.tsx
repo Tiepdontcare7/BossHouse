@@ -2,7 +2,7 @@
 const News = () => {
     return (
         <div>
-            <div className="bg-[#e6e9eb] h-auto  cursor-pointer xl:px-[60px] px-[20px] py-[64px]">
+            <div className="bg-[#f7f8f8] h-auto  cursor-pointer xl:px-[60px] px-[20px] py-[64px]">
                 <div className="text-center">
                     <h2 className="font-bold xl:text-3xl text-2xl mb-4 ">TIN TỨC</h2>
                     <div>

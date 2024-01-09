@@ -13,13 +13,13 @@ import ListUsers from "./pages/admin/users/ListUsers";
 import Settings from "./pages/admin/settings/Settings";
 import ContactPage from "./pages/client/Contact";
 import Blog from "./pages/client/Blog/Blog";
-import Cart from "./pages/Cart/Cart";
+import Cart from "./pages/client/Cart/Cart";
 import { BlogDeatl } from "./pages/client/Blog/BlogDeatl";
 import Shop from "./pages/client/Shop/Shop";
 import Signin from "./pages/client/Account/Signin";
 import Signup from "./pages/client/Account/Signup";
 import Forgot from "./pages/client/Account/Forgot";
-import Checkout from "./pages/Cart/Checkout";
+import Checkout from "./pages/client/Cart/Checkout";
 
 function App() {
   return (

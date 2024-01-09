@@ -5,19 +5,19 @@ const Checkout = () => {
             <div className="grid grid-cols-2  w-full mx-28 mt-10">
                 <div className="  px-10 ">
                     <div>
-                            <h3 className="text-xl font-bold">Thông tin người nhận hàng</h3>
-                            <div className="col-span-6">
-                        <input
-                                    type="text"
-                                    id="name"
-                                    name="name"
-                                    placeholder="Số điện thoại"
-                                    className="mt-1 w-[97%] rounded-md px-2 py-3 border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
-                                />
-                                </div>
+                        <h3 className="text-xl font-bold">Thông tin người nhận hàng</h3>
+                        <div className="col-span-6">
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Số điện thoại"
+                                className="mt-1 w-[97%] rounded-md px-2 py-3 border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+                            />
+                        </div>
                     </div>
                     {/* sdt */}
-                   
+
                     <div className="max-w-xl mt-4 mb-48">
                         <h3 className="text-xl font-bold">Địa chỉ thanh toán</h3>
                         <form action="#" className="mt-2 grid grid-cols-6 gap-6">

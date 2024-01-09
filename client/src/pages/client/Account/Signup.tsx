@@ -1,6 +1,6 @@
 const Signup = () => {
     return (
-            <div className=" xl:mx-[80px] mx-10 mb-20">
+            <div className=" xl:mx-[80px] mx-10 mb-20 mt-10">
                 <h3 className="text-3xl font-bold py-3 bg-[#f7f7f7] h-[70px] text-center">Đăng Ký</h3>
                 <form action=""  className="mt-[20px]">
                     <div>

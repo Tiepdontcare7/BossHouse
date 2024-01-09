@@ -7,7 +7,7 @@ import 'swiper/css/pagination';
 
 const MenuToday = () => {
     return (
-        <section className="py-16 bg-[#f5f1dd]">
+        <section className="py-16 bg-[#eeede7]">
             <div className="text-center">
                 <h2 className="font-bold xl:text-3xl text-2xl mb-4 ">BOSSHOUSE CÓ NHỮNG GÌ</h2>
                 <h4 className="font-bold text-base mb-4"> DỊCH VỤ VÀ THỨC ĂN  </h4>
